@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Commerces - Palette Digitale</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="images/moundou-connect-logo.png" alt="Moundou Connect Logo" class="logo-img">
+                    <span class="logo-text">MPalette Digitale</span>
+                </a>
+            </h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="categories.html">Catégories</a></li>
+                    <li><a href="business-listing.html">Commerces</a></li>
+                    <li><a href="about.html">À Propos</a></li>
+                    <li><a href="add-business.html">Ajouter mon Commerce</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero small-hero">
+        <div class="container">
+            <h2>Tous les Commerces à Moundou</h2>
+            <p>Découvrez une large gamme de services et de produits locaux.</p>
+            <div class="search-bar small-search">
+                <input type="text" id="listingSearchInput" placeholder="Rechercher un commerce...">
+                <button id="listingSearchButton"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="business-listing-section">
+        <div class="container">
+            <div class="business-grid" id="businessGrid">
+                </div>
+            <div class="pagination" id="pagination">
+                </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2025 MPalette Digitale. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Ce script JS est spécifique à cette page pour simuler une recherche sur la liste
+        document.addEventListener('DOMContentLoaded', () => {
+            const listingSearchInput = document.getElementById('listingSearchInput');
+            const listingSearchButton = document.getElementById('listingSearchButton');
+            const businessesContainer = document.getElementById('businessesContainer'); // Réutiliser l'ID
+
+            listingSearchButton.addEventListener('click', () => {
+                const searchTerm = listingSearchInput.value.toLowerCase();
+                const businessCards = businessesContainer.querySelectorAll('.business-card');
+
+                businessCards.forEach(card => {
+                    const name = card.querySelector('h4').textContent.toLowerCase();
+                    const description = card.querySelector('p').textContent.toLowerCase();
+                    const location = card.querySelector('.location').textContent.toLowerCase();
+
+                    if (name.includes(searchTerm) || description.includes(searchTerm) || location.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+
+            listingSearchInput.addEventListener('keyup', (event) => {
+                if (event.key === 'Enter') {
+                    listingSearchButton.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

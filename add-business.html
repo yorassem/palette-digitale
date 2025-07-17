@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter Votre Commerce - Palette DIGITALE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo"><a href="index.html">Palette Digitale</a></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="categories.html">Catégories</a></li>
+                    <li><a href="business-listing.html">Commerces</a></li>
+                    <li><a href="about.html">À Propos</a></li>
+                    <li><a href="add-business.html">Ajouter mon Commerce</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h2>Référencez Votre Commerce</h2>
+            <p>Augmentez votre visibilité et connectez-vous avec de nouveaux clients à Moundou.</p>
+        </div>
+    </section>
+
+    <section class="add-business-section">
+        <div class="container">
+            <h3>Formulaire de Référencement</h3>
+            <p>Veuillez remplir les informations ci-dessous pour ajouter votre commerce ou service à notre annuaire. Notre équipe examinera votre demande dans les plus brefs délais.</p>
+            <form id="addBusinessForm">
+                <div class="form-group">
+                    <label for="businessName">Nom du Commerce/Service</label>
+                    <input type="text" id="businessName" name="businessName" required>
+                </div>
+                <div class="form-group">
+                    <label for="businessCategory">Catégorie</label>
+                    <select id="businessCategory" name="businessCategory" required>
+                        <option value="">Sélectionnez une catégorie</option>
+                        <option value="restaurant">Restaurant</option>
+                        <option value="artisanat">Artisanat</option>
+                        <option value="service_auto">Services Auto</option>
+                        <option value="boutique">Boutique</option>
+                        <option value="sante">Santé</option>
+                        <option value="education">Éducation</option>
+                        <option value="logement">Logement</option>
+                        <option value="loisirs">Loisirs</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="businessAddress">Adresse Complète</label>
+                    <input type="text" id="businessAddress" name="businessAddress" required>
+                </div>
+                 <div class="form-group">
+                    <label for="businessPhone">Numéro de Téléphone (ex: +235 6X XXX XXX)</label>
+                    <input type="tel" id="businessPhone" name="businessPhone" placeholder="+235 6X XXX XXX" required>
+                </div>
+                <div class="form-group">
+                    <label for="businessEmail">Adresse Email (optionnel)</label>
+                    <input type="email" id="businessEmail" name="businessEmail">
+                </div>
+                <div class="form-group">
+                    <label for="businessWhatsapp">Lien WhatsApp (ex: https://wa.me/2356Xxxxxxx - optionnel)</label>
+                    <input type="url" id="businessWhatsapp" name="businessWhatsapp" placeholder="https://wa.me/235XXXXXXXXX">
+                </div>
+                <div class="form-group">
+                    <label for="businessFacebook">Lien Page Facebook (optionnel)</label>
+                    <input type="url" id="businessFacebook" name="businessFacebook" placeholder="https://facebook.com/votrepage">
+                </div>
+                <div class="form-group">
+                    <label for="businessDescription">Description Détaillée de Votre Activité</label>
+                    <textarea id="businessDescription" name="businessDescription" rows="6" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="businessHours">Horaires d'Ouverture (ex: Lun-Ven: 8h-18h, Sam: 9h-14h)</label>
+                    <textarea id="businessHours" name="businessHours" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="businessPhotos">Ajouter des Photos (produits, devanture, équipe - max 5 images)</label>
+                    <input type="file" id="businessPhotos" name="businessPhotos[]" multiple accept="image/*">
+                </div>
+                <button type="submit" class="btn-submit">Soumettre mon Commerce</button>
+            </form>
+            <p class="form-note">Votre demande sera examinée par notre équipe et publiée après validation. Un représentant de Moundou Connect pourra vous contacter pour vérifier les informations.</p>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Palette Digitale. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

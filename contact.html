@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-Nous - Moundou Connect</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo"><a href="index.html">Palette Digitale</a></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="categories.html">Catégories</a></li>
+                    <li><a href="business-listing.html">Commerces</a></li>
+                    <li><a href="about.html">À Propos</a></li>
+                    <li><a href="add-business.html">Ajouter mon Commerce</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h2>Contactez Notre Équipe</h2>
+            <p>Nous sommes là pour répondre à vos questions et recevoir vos suggestions.</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <h3>Informations de Contact</h3>
+            <div class="contact-info-grid">
+                <div class="info-box">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Email</h4>
+                    <p><a href="mailto:contact@moundouconnect.td">contact@moundouconnect.td</a></p>
+                    <p>Pour toute question générale ou suggestion.</p>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-phone"></i>
+                    <h4>Téléphone</h4>
+                    <p><a href="tel:+2356XXXXXXX">+235 66 09 05 43</a></p>
+                    <p>Appelez-nous pendant les heures de bureau.</p>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Adresse</h4>
+                    <p>Moundou, Logone Occidental, Tchad</p>
+                    <p>Nos bureaux (sur rendez-vous uniquement).</p>
+                </div>
+            </div>
+
+            <h3>Envoyez-nous un Message</h3>
+            <p>Utilisez le formulaire ci-dessous pour nous envoyer un message directement.</p>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Votre Nom</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Votre Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Sujet</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Votre Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Envoyer le Message</button>
+            </form>
+            <p class="form-note">Nous nous efforçons de répondre à toutes les demandes dans les 24-48 heures ouvrables.</p>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Palette Digitale. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Ce script JS est spécifique à cette page pour simuler l'envoi du formulaire de contact
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', (event) => {
+                event.preventDefault(); // Empêche l'envoi réel du formulaire
+
+                const formData = new FormData(contactForm);
+                const messageData = {};
+                for (const [key, value] of formData.entries()) {
+                    messageData[key] = value;
+                }
+
+                alert('Message envoyé !' +
+                      '\nNom: ' + messageData.name +
+                      '\nEmail: ' + messageData.email +
+                      '\nSujet: ' + messageData.subject +
+                      '\nMessage: ' + messageData.message +
+                      '\n\n(En production, ce message serait envoyé à une adresse email via un serveur)');
+
+                contactForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
